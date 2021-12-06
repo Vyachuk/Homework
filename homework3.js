@@ -84,6 +84,10 @@ function lastElem(arr, k) {
 }
 
 /********************** TASK 8 ******/
-function firstRegister (str) {
-    return str[0].toUpperCase() + str.slice(1);
+function firstRegister (str) {                              //функція підняття першої букви кожного слова
+    let arr = str.split(' ');                               //перетворюємо строку в масив
+    let result = arr.map(function(item, index, array) {     //перебираємо масив і записуємов result
+        return item[0].toUpperCase() + item.slice(1);       //повертаємо велику першу букву кожного елемента масива + продовження елемента
+    }); 
+    console.log(result.join(' '));                          //виводим в консоль результат масива у вигляді строки.
 }
