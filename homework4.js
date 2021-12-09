@@ -48,46 +48,25 @@ class MonthException {
     }
     checkNumber(value) {
         if (value < 1 || value > 12) {
-            console.log("Incorrect month number.");
+            throw new Error(`Incorrect month number.`);
         }
         if (isNaN(value) && value === undefined) {
-            console.log("The field is NaN!");
+            throw new Error(`The value is NaN.`);
         }
     }
 }
-
+try {
+    //showMonthName(month);
+}
+catch(error) {
+    console.log(`${error.name}: ${error.message}.`);
+}
 function showMonthName(month) {
     let monthException = new MonthException();
     monthException.checkNumber(month);
     let switchMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     console.log(switchMonth[month - 1]);
-    /*switch (month) {
-        case 1: console.log("January");
-            break;
-        case 2: console.log("February");
-            break;
-        case 3: console.log("March");
-            break;
-        case 4: console.log("April");
-            break;
-        case 5: console.log("May");
-            break;
-        case 6: console.log("June");
-            break;
-        case 7: console.log("July");
-            break;
-        case 8: console.log("August");
-            break;
-        case 9: console.log("September");
-            break;
-        case 10: console.log("October");
-            break;
-        case 11: console.log("November");
-            break;
-        case 12: console.log("December");
-            break;    
-    }*/
-}
+}    
 
 /******************** TASK 4 */
 class IdObject {
