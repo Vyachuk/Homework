@@ -69,28 +69,15 @@ function showMonthName(month) {
 }    
 
 /******************** TASK 4 */
-class IdObject {
-    constructor (name) {
-        this.name = name;
-    }
-    checkId(value) {
-        if (value >= 0) {
-            let user = {
-                id: value
-            }
-            return this.name = user;
+function showUser(ids) {
+    if (ids >= 0) {
+        let user = {
+            id: ids
         }
-        if (value < 0) throw new Error(`ID must not be negative: ${value}`);
-        if (isNaN(value) || value === undefined) throw new Error("Incorrect id");
-        //return value; Незнаю чи потрібно повертати Value?
-
+        return user;
     }
-}
-const dif = [2, 12, -3, 29];
-function showUser(id) {
-    let objectId = new IdObject();
-    //console.log(objectId.checkId(id)); 
-    return objectId.checkId(id);
+    if (ids < 0) throw new Error(`ID must not be negative: ${ids}`);
+    if (isNaN(ids) || ids === undefined) throw new Error("Incorrect id");
 }
 function showUsers(ids) {
     let positiveArr = ids.filter(function(item) {
@@ -104,7 +91,6 @@ function showUsers(ids) {
     console.log(result);
 }
 try {
-    //showUser(id);
 }
 catch(error) {
     console.log(`${error.name}: ${error.message}.`);
