@@ -1,0 +1,18 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "hw11.js",
+  "scripts": {
+    "start": "node hw11.js",
+    "dev": "nodemon hw11.js"
+  },
+  "author": "Vyacheslav",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
